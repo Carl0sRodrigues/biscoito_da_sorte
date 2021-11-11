@@ -1,21 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+function App(){
+  return(
+    <View style={styles.conteiner}>
+      <Image
+      source={require('./assets/img/biscoito.png')}
+      style={styles.img}
+      />
+      <TouchableOpacity>
+        <View>
+          <Text>Quebrar Biscoito</Text>
+        </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity>
+        <View>
+          <Text>Reiniciar</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  conteiner:{
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center'
   },
-});
+  img:{
+    width: 230,
+    height: 230
+  }
+})
+
+export default App;
